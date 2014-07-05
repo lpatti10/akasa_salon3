@@ -3,24 +3,212 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
+$mobile: new-breakpoint(max-width 550px);
+$desktop: new-breakpoint(min-width 850px);
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+body {
+  font-size: 14px;
+  font-family: Sans-Serif;
+}
+a {
+  text-decoration: none;
+}
+.blurImg {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  & > div {
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
   }
 }
+.blur {
+  opacity: 0;
+}
+
+header {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0px 20px;
+  & > div {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding-top: 150px;
+    height: 380px;
+    text-align: center;
+    color: #fff;
+    a {
+      font-size: 0.8em;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.85);
+      line-height: 30px;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 2em;
+      transition: all 0.3s ease;
+      &:hover {
+        background: white;
+        color: Gray;
+      }  
+    }
+  }
+}
+h1 {
+  margin-bottom: 0.2em;
+}
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.7em;
+  font-family:"Playfair Display SC", serif;
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+nav {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 60px;
+  border-top: 1px rgba(255,255,255,0.35) solid;
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      a {
+        font-weight: 800;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        color: rgba(255,255,255,0.5);
+        transition: color 0.3s linear;
+        line-height: 60px;
+        display: block;
+        &.active {
+          box-shadow: 0px -1px 0px white;
+        }
+      }
+    }
+  }
+}
+nav ul li a.active, nav ul li a:hover {
+  color: white;
+}
+
+.messaging {
+  height: auto;
+  margin-top: 0px;
+  padding-top: 40px;
+  > p {
+    font-size: 1.2em;
+    margin-bottom: 0.7em;
+    font-family:"Playfair Display SC", serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+    opacity: 0.7;
+    & > span {
+      font-size: 2.0em;
+      vertical-align: -0.15em;
+    }
+  }
+}
+p.overview {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fff;
+  // font-family:"Playfair Display", serif;
+  // font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  padding: 0px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  font-size: 2.0em;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: .05em;
+}
+div.button {
+  height: auto;
+  margin-top: 0px;
+  padding-top: 0px;
+  a.button {
+  text-align: center;
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.85);
+  line-height: 30px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2em;
+  transition: all 0.3s ease;
+  &:hover {
+    background: white;
+    color: Gray;
+    }  
+  }
+}
+
+.spotlights {
+  background: #fff;
+  opacity: 0.9;
+}
+
+section.featured {
+  @include outer-container;
+  // background: #fff;
+  height: 400px;
+  padding-top: 40px;
+}
+
+.tile {
+  @include media($mobile) {
+    @include span-columns(12);
+  }
+  @include media($desktop) {
+    @include span-columns(4);
+  }
+  cursor: pointer;
+  background: #fff;
+}
+
+.border {
+  border: -60px solid #fff;
+  opacity: 0.5;
+}
+
+.container {
+  height: 600px;
+  background: #fff;
+  z-index: 1;
+  padding: 0px 20px;
+}
+
+
+.container_bottom {
+  margin: 0 auto;
+  width: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+small.sub_left {
+  margin: 0px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.0em;
+}
+
+
+
+
+
+
